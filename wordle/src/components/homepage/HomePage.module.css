@@ -1,0 +1,52 @@
+.container{
+    background-color: var(--background-color);
+}
+.container .grid{
+    display: flex;
+    justify-content: center;
+    margin: 2vh auto;
+}
+
+.container .grid > * {
+    font-size: xx-large;
+    text-transform: capitalize;
+    width: 50px;
+    height: 50px;
+    margin: 0 4px;
+    border-radius: 5px;
+    text-align: center;
+    line-height: 50px;
+}
+
+.container .grid .blank{
+    
+    border: 1px solid rgb(204, 204, 204);
+}
+
+.container .grid .active{
+    
+    border: 1px solid black;
+    
+}
+
+.container .grid .right{ 
+    background-color: RGB(107, 170, 100);
+    border: 1px solid RGB(107, 170, 100);
+    color: white;
+}
+
+.container .grid .includes{
+    background-color: RGB(201, 180, 88);
+    border: 1px solid RGB(201, 180, 88);
+    color: white;
+   
+}
+
+.container .grid .wrong{
+    background-color: RGB(120, 124, 127);
+    border: 1px solid RGB(120, 124, 127);
+    color: white;
+    
+}
+
+
