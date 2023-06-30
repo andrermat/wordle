@@ -59,25 +59,32 @@ export default function HomePage() {
         setGame(prev => {
             const key = e.key
             let clone = { ...prev }
+            
+                
             if (key === "Enter" && clone.attempts[clone.activeLine].length === 5)
                 if (words.includes(clone.attempts[clone.activeLine]))
                     if( clone.word === clone.attempts[clone.activeLine]){
                         alert("Parabéns, você acertou!")
-                        clone.activeLine++
                         clone.attempts = ["", "", "", "", "", ""]
                         clone.activeLine = 0
                         clone.word = words[Math.round(Math.random() * (words.length))]
                     }
-                    else
+                    else if(clone.activeLine === 5){
+                        alert("Infelizmente perdeu :(")
+                        clone.attempts = ["", "", "", "", "", ""]
+                        clone.activeLine = 0
+                        clone.word = words[Math.round(Math.random() * (words.length))]
+                    }
+                        else
                         clone.activeLine++
                 else{
-                    alert(clone.word)
                     alert("Palavra não existe no dicionário")
                 }
             else if (key === "Backspace")
                 clone.attempts[clone.activeLine] = clone.attempts[clone.activeLine].slice(0, -1)
             else if (key.length === 1 && key.match(/[a-z]/i) && clone.attempts[clone.activeLine].length < 5)
                 clone.attempts[clone.activeLine] += key
+            
             return clone
         })
     }
